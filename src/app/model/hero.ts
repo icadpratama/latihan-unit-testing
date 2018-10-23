@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent { }
+export interface Hero {
+  id: number;
+  name: string;
+}
+
+// SystemJS bug:
+// TS file must export something real in JS, not just interfaces
+export const _dummy = undefined;
 
 
 /*
