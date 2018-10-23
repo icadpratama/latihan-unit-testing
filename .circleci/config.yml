@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: latihan-unit-testing-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: latihan-unit-testing-master-{{ checksum "package-lock.json" }}
       - run: npm install
       - save_cache:
-          key: latihan-unit-testing-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: latihan-unit-testing-master-{{ checksum "package-lock.json" }}
           paths:
             - 'node_modules'
       - run: npm run test --single-run --no-progress --browser=ChromeHeadlessCI
